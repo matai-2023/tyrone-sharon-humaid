@@ -6,6 +6,7 @@ body {
 }
 
 /* Flexbox styling */
+/* fix font size issue */
 .home-title {
   text-align: center;
   font-size: 8vh;
