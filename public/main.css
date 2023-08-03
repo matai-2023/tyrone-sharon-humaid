@@ -1,3 +1,4 @@
+/* restyle with rem? */
 /* General styling */
 body {
   background-color: lightgray;
@@ -46,8 +47,21 @@ body {
   font-size: auto;
 }
 
-@media (max-width: 800px) {
-  .home-container {
-    width: 90%;
-  }
+/* Newtask form styling */
+
+.newtask-box {
+  margin-top: 2vh;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.newtask-form {
+  color: aliceblue;
+}
+
+.task-button {
+  background-color: palegoldenrod;
 }
