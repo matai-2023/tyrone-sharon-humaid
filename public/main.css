@@ -1,0 +1,53 @@
+/* General styling */
+body {
+  background-color: lightgray;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Flexbox styling */
+.home-title {
+  text-align: center;
+  font-size: 8vh;
+}
+
+.home-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  /* align-content: left; */
+}
+
+.task-box {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  width: 100%;
+  margin: 0.2vh;
+}
+
+/* Taskbox interior styling */
+
+.task-title {
+  padding-left: 1%;
+  font-size: auto;
+}
+
+.description {
+  padding-left: 1%;
+  font-size: auto;
+}
+
+@media (max-width: 800px) {
+  .home-container {
+    width: 90%;
+  }
+}
