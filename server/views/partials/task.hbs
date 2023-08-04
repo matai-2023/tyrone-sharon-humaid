@@ -1,11 +1,13 @@
 {{#each tasks}}
 <div class="task-box" >
     <h2 class="task-title">{{title}}</h2>
+  <div class="content-box">
     <p class="description">{{details}}</p>
-    <div>
-  <form action="/deleteTask/{{id}}" method="post">
+      <form action="/deleteTask/{{id}}" method="post">
     <button class ="delete-button" type="submit" value="{{id}}">x</button>
   </form>
   </div>
+
+  
 </div>
 {{/each}}

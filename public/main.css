@@ -60,7 +60,13 @@ body {
 
 .delete-button {
   background-color: rgb(255, 113, 113);
-  align-self: flex-end;
+  float: right;
+  margin-bottom: 2px;
+}
+
+.content-box {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Newtask form styling */
@@ -88,7 +94,7 @@ body {
 
 .task-button {
   margin-top: 5px;
-  background-color: palegoldenrod;
+  background-color: rgb(196, 247, 247);
   border-radius: 3px;
 }
 
