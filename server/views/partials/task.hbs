@@ -1,8 +1,9 @@
-<div class = "task-box" >
-  <h2 class = "task-title">My Task</h2>
-  <p class = "description">Clean the dishes</p>
+{{#each tasks}}
+<div class="task-box" >
+  <form action="/deleteTask/{{id}}" method="post">
+    <h2 class="task-title">{{title}}</h2>
+    <p class="description">{{details}}</p>
+    <button type="submit" value="{{id}}">Remove</button>
+  </form>
 </div>
-<div class = "task-box">
-  <h2 class = "task-title">My Other Task</h2>
-  <p class = "description">Bathe the monkey</p>
-</div>
+{{/each}}
