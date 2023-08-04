@@ -8,13 +8,6 @@ const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
 
 const filePath = Path.join(__dirname, 'data', 'data.json')
-console.log('file path', filePath)
-const data = await fs.readFile(filePath, 'utf-8')
-console.log('task data', data)
-const taskData = JSON.parse(data)
-console.log('parsed data', taskData)
-const taskList = taskData.tasks
-console.log('task list', taskList)
 
 const server = express()
 
@@ -29,8 +22,26 @@ server.set('view engine', 'hbs')
 server.set('views', Path.resolve('server/views'))
 
 // Your routes/router(s) should go here
-server.get('/', (req, res) => {
+server.get('/', async (req, res) => {
+  const data = await fs.readFile(filePath, 'utf-8')
+  const taskData = JSON.parse(data)
   res.render('home', taskData)
+})
+
+server.post('/deleteTask/:id', async (req, res) => {
+  const data = await fs.readFile(filePath, 'utf-8')
+  const taskData = JSON.parse(data)
+  const taskList = taskData.tasks
+  const id = Number(req.params.id)
+  const indexOfObject = taskList.findIndex((obj) => {
+    return obj.id === id
+  })
+
+  //Delete data from array
+  taskList.splice(indexOfObject, 1)
+  const stringedData = JSON.stringify(taskData, null, 2)
+  await fs.writeFile(filePath, stringedData, 'utf-8')
+  res.redirect('/')
 })
 
 export default server
