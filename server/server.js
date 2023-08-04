@@ -60,6 +60,10 @@ server.post('/', async (req, res) => {
 
   dataList.push(newObject)
 
+  dataList.forEach((task, index) => {
+    task.id = index + 1
+  })
+
   const strData = JSON.stringify(data, null, 2)
 
   await fs.writeFile(filePath, strData, 'utf-8')
