@@ -1,14 +1,19 @@
 /* restyle with rem? */
 /* General styling */
+:root {
+  --main-bg-color: rgb(255, 255, 178);
+  --alt-bg-color: white;
+}
+
 body {
-  background-color: lightgray;
+  background-color: var(--main-bg-color);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Flexbox styling */
 .home-title {
   text-align: center;
-  font-size: 8vh;
+  font-size: 3.5rem;
 }
 
 .home-container {
@@ -28,23 +33,29 @@ body {
 }
 
 .task-box {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 7px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
   width: 100%;
-  margin: 0.2vh;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-bottom: 0px;
 }
 
 /* Taskbox interior styling */
 
 .task-title {
   padding-left: 1%;
-  font-size: auto;
+  font-size: 1rem;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .description {
   padding-left: 1%;
-  font-size: auto;
+  font-size: 1rem;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 /* Newtask form styling */
@@ -71,17 +82,29 @@ body {
 }
 
 .task-button {
+  margin-top: 5px;
   background-color: palegoldenrod;
+  border-radius: 3px;
 }
 
 .taskname-input {
-  background-color: lightgray;
+  background-color: var(--main-bg-color);
   border-style: none;
   width: 98%;
+  padding-top: 10px;
+  margin-bottom: 5px;
 }
-
+.taskname-input:focus {
+  background-color: var(--main-bg-color);
+  outline: none;
+}
 .taskdetails-input {
-  background-color: lightgray;
+  background-color: var(--main-bg-color);
   border-style: none;
   width: 98%;
+  padding-bottom: 50px;
+}
+.taskdetails-input:focus {
+  background-color: var(--main-bg-color);
+  outline: none;
 }
