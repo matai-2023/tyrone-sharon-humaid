@@ -1,9 +1,11 @@
 {{#each tasks}}
 <div class="task-box" >
-  <form action="/deleteTask/{{id}}" method="post">
     <h2 class="task-title">{{title}}</h2>
     <p class="description">{{details}}</p>
-    <button type="submit" value="{{id}}">Remove</button>
+    <div>
+  <form action="/deleteTask/{{id}}" method="post">
+    <button class ="delete-button" type="submit" value="{{id}}">x</button>
   </form>
+  </div>
 </div>
 {{/each}}
