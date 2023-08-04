@@ -1,16 +1,19 @@
 {
   "tasks": [
-    {"id": 1,
-    "title": "Make a app",
-    "details": "Making an app for our Friday Group Project"
+    {
+      "id": 1,
+      "title": "Make an app",
+      "details": "Making an app for our Friday Group Project"
     },
-    {"id": 2,
-    "title": "Make a house",
-    "details": "Making a house for our Friday Group Project"
+    {
+      "id": 2,
+      "title": "Make a house",
+      "details": "Making a house for our Friday Group Project"
     },
-    {"id": 3,
-    "title": "Make a painting",
-    "details": "Making painting for our Friday Group Project"
+    {
+      "id": 3,
+      "title": "Make a computer",
+      "details": "Making a computer for our Friday Group Project"
     }
   ]
 }
