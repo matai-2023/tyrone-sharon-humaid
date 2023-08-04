@@ -1,5 +1,6 @@
 import * as Path from 'node:path'
 import * as URL from 'node:url'
+
 import express from 'express'
 import hbs from 'express-handlebars'
 import * as fs from 'node:fs/promises'
@@ -41,6 +42,28 @@ server.post('/deleteTask/:id', async (req, res) => {
   taskList.splice(indexOfObject, 1)
   const stringedData = JSON.stringify(taskData, null, 2)
   await fs.writeFile(filePath, stringedData, 'utf-8')
+  res.redirect('/')
+})
+
+server.post('/', async (req, res) => {
+  const filePath = Path.join(__dirname, 'data', 'data.json')
+
+  const data = JSON.parse(await fs.readFile(filePath, 'utf-8'))
+
+  const i = data.tasks.length
+
+  const newObject = Object.assign({}, req.body)
+
+  newObject['id'] = i + 1
+
+  const dataList = data.tasks
+
+  dataList.push(newObject)
+
+  const strData = JSON.stringify(data, null, 2)
+
+  await fs.writeFile(filePath, strData, 'utf-8')
+
   res.redirect('/')
 })
 
